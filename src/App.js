@@ -54,7 +54,7 @@ function App() {
       </Router> */}
       {/* reacts uses partial matching for path and thus imp to specifiy exact path if we want same */}
 
-      <Navbar mode={mode} toggleMode={toggleMode} title="Textutils" />
+      <Navbar mode={mode} toggleMode={toggleMode} title="TextUtils" />
       <Alert alert={alert} />
       <div className="container my-3">
         <Textform showAlert={showAlert} mode={mode} heading="Enter text to be analyzed.." />

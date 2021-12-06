@@ -6,8 +6,8 @@
 
 
 
-**Note** : _This project was created by me  while I was learning React (from an online tutorial)_
-            **This project  was just to learn deployment of react app on github pages **
+**Note** : 
+            **_This project  was created by me   just to learn deployment of react app on github pages_ **
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -66,14 +66,14 @@ export default function Textform(props) {
 
                     <textarea className="form-control" style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} value={text} id="myBox" rows="5" onChange={handleOnChange}></textarea>
                 </div>{/*in above style one curly bracket aaas we are writing in js and second as we ae makinga an object*/}
-                <button className={`btn btn-warning mx-2`} onClick={UppercaseClicked}>Convert to Uppercase</button>
-                <button className={`btn btn-warning mx-2`} onClick={LowercaseClicked}>Convert to Lowercase</button>
-                <button className={`btn btn-warning mx-2`} onClick={CapitalizeClicked}>Capitalize text</button>
-                <button className="btn btn-info mx-2" onClick={RemoveExtraSpacesClicked}>Remove Extraspaces </button>
+                <button className={`btn btn-warning mx-2 my-1`} onClick={UppercaseClicked}>Convert to Uppercase</button>
+                <button className={`btn btn-warning mx-2 my-1`} onClick={LowercaseClicked}>Convert to Lowercase</button>
+                <button className={`btn btn-warning mx-2 my-1`} onClick={CapitalizeClicked}>Capitalize text</button>
+                <button className="btn btn-info mx-2 my-1" onClick={RemoveExtraSpacesClicked}>Remove Extraspaces </button>
                 {/* <button type="button" className="btn btn-success mx-2 popoverBtn" onClick={CopyTextClicked} data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Text copied">Copy Text</button>
                 <button type="button" className="btn btn-danger mx-2 popoverBtn" onClick={ResetClicked} data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Text cleared">Reset Text</button> */}
-                <button className="btn btn-success mx-2" id="copyTextBtn" onClick={CopyTextClicked}>Copy Text</button>
-                <button className="btn btn-danger mx-2" onClick={ResetClicked}>Reset</button>
+                <button className="btn btn-success mx-2 my-1" id="copyTextBtn" onClick={CopyTextClicked}>Copy Text</button>
+                <button className="btn btn-danger mx-2 my-1" onClick={ResetClicked}>Reset</button>
             </div>
             <div className="container my-2" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2><u>Your text summary</u></h2><br></br>

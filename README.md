@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-_Note: This project was created by me (from an online tutorial) while I was learning React
+**Note** : _This project was created by me (from an online tutorial) while I was learning React_
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

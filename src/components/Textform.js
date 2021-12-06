@@ -57,17 +57,6 @@ export default function Textform(props) {
         //console.log("handleOnChange ");
         setText(event.target.value);// now you will be able to write on textarea
     }
-    const wordCounter = (text) => {
-        let arr = text.split(" ");
-        let count = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] !== " ") {
-                count++;
-            }
-        }
-
-        return count;
-    }
     return (
         <>
 
@@ -88,7 +77,8 @@ export default function Textform(props) {
             </div>
             <div className="container my-2" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2><u>Your text summary</u></h2><br></br>
-                <p><i>Your text has : {wordCounter(text)} words and {text.length} character</i></p>
+                <p><i>Your text has : {text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.length} character</i></p>
+                {/* to solve the problem of waord count when empty string , we used filter ,for whichever element the argument is true it will return that element  */}
                 <h2><u>Text preview</u></h2>
                 <p><i>{text.length > 0 ? text : "Write something in the textbox above to preview it here..."}</i></p>
             </div>

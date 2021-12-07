@@ -3,7 +3,11 @@
 ## TextUtils
 
 [TextUtils](https://yash-barjatya.github.io/TextUtils-React/) is a  site which can  help you  to modify your text with the help of various utilities
-**Note** : _This project was created by me  while I was learning React (from an online tutorial)_
+
+
+
+**Note** : 
+            _This project  was created by me   just to learn deployment of react app on github pages_
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

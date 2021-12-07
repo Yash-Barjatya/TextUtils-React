@@ -24,10 +24,7 @@ export default function Textform(props) {
         props.showAlert("Extra Spaces removed", 'success')
     }
     const CopyTextClicked = () => {
-        var text = document.getElementById("myBox");
-        text.select();
-
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert("Text copied", 'success')
     }
     const CapitalizeClicked = () => {
@@ -60,24 +57,26 @@ export default function Textform(props) {
     return (
         <>
 
-            <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
-                <h1>{props.heading}</h1>
+            <div className="container " style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
+                <h1 className="mb-4">{props.heading}</h1>
                 <div className="mb-3">
 
                     <textarea className="form-control" style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} value={text} id="myBox" rows="5" onChange={handleOnChange}></textarea>
                 </div>{/*in above style one curly bracket aaas we are writing in js and second as we ae makinga an object*/}
-                <button className={`btn btn-warning mx-2 my-1`} onClick={UppercaseClicked}>Convert to Uppercase</button>
-                <button className={`btn btn-warning mx-2 my-1`} onClick={LowercaseClicked}>Convert to Lowercase</button>
-                <button className={`btn btn-warning mx-2 my-1`} onClick={CapitalizeClicked}>Capitalize text</button>
-                <button className="btn btn-info mx-2 my-1" onClick={RemoveExtraSpacesClicked}>Remove Extraspaces </button>
+                <button style={{ border: '3px solid black' }} disabled={text.length === 0} className={`btn btn-warning mx-2 my-1`} onClick={UppercaseClicked}>Convert to Uppercase</button>
+                <button style={{ border: '3px solid black' }} disabled={text.length === 0} className={`btn btn-warning mx-2 my-1`} onClick={LowercaseClicked}>Convert to Lowercase</button>
+                <button style={{ border: '3px solid black' }} disabled={text.length === 0} className={`btn btn-warning mx-2 my-1`} onClick={CapitalizeClicked}>Capitalize text</button>
+                <button style={{ border: '3px solid black' }} disabled={text.length === 0} className="btn btn-info mx-2 my-1" onClick={RemoveExtraSpacesClicked}>Remove Extraspaces </button>
                 {/* <button type="button" className="btn btn-success mx-2 popoverBtn" onClick={CopyTextClicked} data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Text copied">Copy Text</button>
                 <button type="button" className="btn btn-danger mx-2 popoverBtn" onClick={ResetClicked} data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Text cleared">Reset Text</button> */}
-                <button className="btn btn-success mx-2 my-1" id="copyTextBtn" onClick={CopyTextClicked}>Copy Text</button>
-                <button className="btn btn-danger mx-2 my-1" onClick={ResetClicked}>Reset</button>
+                <button style={{ border: '3px solid black' }} disabled={text.length === 0} className="btn btn-success mx-2 my-1" id="copyTextBtn" onClick={CopyTextClicked}>Copy Text</button>
+                <button style={{ border: '3px solid black' }} disabled={text.length === 0} className="btn btn-danger mx-2 my-1" onClick={ResetClicked}>Reset</button>
             </div>
             <div className="container my-2" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
-                <h2><u>Your text summary</u></h2><br></br>
-                <p><i>Your text has : {text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.length} character</i></p>
+                <h2><u>Text summary</u></h2><br></br>
+                <p><i>Your text has : {text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} character</i></p>
+                {/* regular expression where \s== any space be it white space or a new line space */}
+
                 {/* to solve the problem of waord count when empty string , we used filter ,for whichever element the argument is true it will return that element  */}
                 <h2><u>Text preview</u></h2>
                 <p><i>{text.length > 0 ? text : "Write something in the textbox above to preview it here..."}</i></p>
